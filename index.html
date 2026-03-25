@@ -245,18 +245,28 @@
     @media (max-width: 900px) {
       .nav-links { display: none; }
       #hamburger { display: block; }
+      /* Hide nav CTA — it's already in the mobile menu */
+      .nav-wrap a.btn-green { display: none; }
       .hero-grid, .approach-grid, .about-grid, .testimonials-grid { grid-template-columns: 1fr !important; }
-      .approach-cols { grid-template-columns: 1fr !important; }
+      .approach-cols { grid-template-columns: 1fr !important; grid-auto-rows: auto !important; }
+      /* Photo rows need an explicit height; text cards size to content */
+      .approach-cols > div:nth-child(odd) { min-height: 260px; }
       .hero-img-col { display: none; }
       .fees-grid { grid-template-columns: 1fr !important; }
       .footer-grid { grid-template-columns: 1fr !important; }
       .section { padding: 4rem 1.25rem; }
+      /* Remove decorative top offset when testimonial columns stack */
+      .testimonials-grid > div:last-child { padding-top: 0 !important; }
+      /* Pull about badge back into flow so it doesn't overflow screen edge */
+      .about-badge { position: static !important; margin-top: 1rem; }
     }
     @media (max-width: 900px) {
       .service-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
     @media (max-width: 480px) {
       .service-grid { grid-template-columns: 1fr !important; }
+      /* Shrink hero logo on small phones */
+      .hero-logo { height: 120px !important; }
     }
   </style>
 </head>
@@ -304,7 +314,7 @@
 
     <!-- Centered logo -->
     <div style="text-align:center;margin-bottom:1.75rem;">
-      <img src="brand_assets/Transparent Rewired Mind with text (1).png" alt="Rewired Mind" style="height:190px;width:auto;display:inline-block;" />
+      <img src="brand_assets/Transparent Rewired Mind with text (1).png" alt="Rewired Mind" class="hero-logo" style="height:190px;width:auto;display:inline-block;" />
     </div>
 
     <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
@@ -587,7 +597,7 @@
             <div style="font-size:0.78rem;color:rgba(255,255,255,0.75);margin-top:0.2rem;">Founder &amp; Practitioner, Rewired Mind</div>
           </div>
         </div>
-        <div class="card" style="position:absolute;top:-1.25rem;right:-1.25rem;padding:0.85rem 1.1rem;">
+        <div class="card about-badge" style="position:absolute;top:-1.25rem;right:-1.25rem;padding:0.85rem 1.1rem;">
           <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:0.2rem;">Trained in</div>
           <div style="font-size:0.82rem;font-weight:600;color:var(--text);">The Cortina Method©</div>
         </div>
