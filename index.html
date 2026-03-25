@@ -255,6 +255,11 @@
       .fees-grid { grid-template-columns: 1fr !important; }
       .footer-grid { grid-template-columns: 1fr !important; }
       .section { padding: 4rem 1.25rem; }
+      /* Hero stats: inverted triangle — 90% and 1-visit on top row, Free centred below */
+      .hero-stats { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.25rem 2rem !important; justify-items: center; }
+      .hero-stats > div:nth-child(2),
+      .hero-stats > div:nth-child(4) { display: none !important; }
+      .hero-stats > div:nth-child(5) { grid-column: 1 / -1; text-align: center; }
       /* Remove decorative top offset when testimonial columns stack */
       .testimonials-grid > div:last-child { padding-top: 0 !important; }
       /* Pull about badge back into flow so it doesn't overflow screen edge */
@@ -340,7 +345,7 @@
           <a href="#approach" class="btn-outline">Learn More</a>
         </div>
         <!-- Stats -->
-        <div style="display:flex;gap:2.5rem;flex-wrap:wrap;align-items:center;">
+        <div class="hero-stats" style="display:flex;gap:2.5rem;flex-wrap:wrap;align-items:center;">
           <div>
             <div style="font-size:1.75rem;font-weight:700;color:var(--blue);letter-spacing:-0.03em;line-height:1;">90%</div>
             <div style="font-size:0.77rem;font-weight:400;color:var(--muted);margin-top:0.2rem;">Effectiveness Rate</div>
