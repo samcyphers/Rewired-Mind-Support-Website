@@ -261,10 +261,15 @@
       .about-badge { position: static !important; margin-top: 1rem; }
     }
     @media (max-width: 900px) {
-      .service-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .service-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .service-grid .card { padding: 1.25rem 0.75rem !important; }
+      .service-grid .card > div:first-child { width: 48px !important; height: 48px !important; margin-bottom: 0.75rem !important; }
     }
     @media (max-width: 480px) {
-      .service-grid { grid-template-columns: 1fr !important; }
+      .service-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .service-grid .card { padding: 1rem 0.625rem !important; }
+      .service-grid .card > div:first-child { width: 40px !important; height: 40px !important; margin-bottom: 0.625rem !important; }
+      .service-grid .card > div:last-child { font-size: 0.78rem !important; }
       /* Shrink hero logo on small phones */
       .hero-logo { height: 120px !important; }
     }
